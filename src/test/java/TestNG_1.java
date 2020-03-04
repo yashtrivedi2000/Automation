@@ -1,4 +1,5 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
@@ -21,11 +22,34 @@ public class TestNG_1 {
 	public void Test() throws InterruptedException
 	{
 		
-		wd.get("https://www.google.com/");
-		GoogleBean gb= new GoogleBean(wd);
-		gb.set_search_box("Yash Trivedi");
-		gb.click_search_button();
-		Thread.sleep(3000);
+		wd.get("https://web.whatsapp.com/");
+		Thread.sleep(6000);
+		wd.findElement(By.xpath("//span[contains(@title, \"Miss Yumm\" )]")).click();
+		for (int i = 0; i < 10; i++) {
+			wd.findElement(By.xpath("//*[@id=\"main\"]/footer/div[1]/div[2]/div/div[2]")).sendKeys("Hello"+Keys.ENTER);;
+			Thread.sleep(1000);
+			
+		}
+		wd.findElement(By.xpath("//span[contains(@title, \"Honey\" )]")).click();
+		for (int i = 0; i < 10; i++) {
+			wd.findElement(By.xpath("//*[@id=\"main\"]/footer/div[1]/div[2]/div/div[2]")).sendKeys("Hello"+Keys.ENTER);;
+			Thread.sleep(1000);
+			
+		}
+		wd.findElement(By.xpath("//span[contains(@title, \"Keyur\" )]")).click();
+		for (int i = 0; i < 10; i++) {
+			wd.findElement(By.xpath("//*[@id=\"main\"]/footer/div[1]/div[2]/div/div[2]")).sendKeys("Hello"+Keys.ENTER);;
+			Thread.sleep(1000);
+			
+		}
+		wd.findElement(By.xpath("//span[contains(@title, \"Davda\" )]")).click();
+		for (int i = 0; i < 10; i++) {
+			wd.findElement(By.xpath("//*[@id=\"main\"]/footer/div[1]/div[2]/div/div[2]")).sendKeys("Hello"+Keys.ENTER);;
+			Thread.sleep(1000);
+			
+		}
+		Thread.sleep(5000);
+		
 	}
 	@AfterTest
 	public void FinishingTest() {
